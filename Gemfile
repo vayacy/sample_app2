@@ -34,9 +34,7 @@ gem "bootstrap-sass"
 
 gem "rails-controller-testing"
 
-group :production do
-  gem 'pg'
-end
+gem "gravtastic"
 
 
 # Use Capistrano for deployment
