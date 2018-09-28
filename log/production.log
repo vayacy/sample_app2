@@ -1,0 +1,18 @@
+D, [2018-09-23T12:32:46.347736 #5908] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+D, [2018-09-23T12:32:46.417608 #5908] DEBUG -- :   [1m[35m (65.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+D, [2018-09-23T12:32:46.492341 #5908] DEBUG -- :   [1m[35m (70.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2018-09-23T12:32:46.498021 #5908] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2018-09-23T12:32:46.498165 #5908]  INFO -- : Migrating to CreateUsers (20180923021131)
+D, [2018-09-23T12:32:46.499008 #5908] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2018-09-23T12:32:46.500001 #5908] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+D, [2018-09-23T12:32:46.503974 #5908] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180923021131"]]
+D, [2018-09-23T12:32:46.566524 #5908] DEBUG -- :   [1m[35m (61.8ms)[0m  [1m[36mcommit transaction[0m
+I, [2018-09-23T12:32:46.567029 #5908]  INFO -- : Migrating to AddPasswordDigestToUsers (20180923033024)
+D, [2018-09-23T12:32:46.569071 #5908] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+D, [2018-09-23T12:32:46.572353 #5908] DEBUG -- :   [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" varchar[0m
+D, [2018-09-23T12:32:46.577027 #5908] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180923033024"]]
+D, [2018-09-23T12:32:46.616465 #5908] DEBUG -- :   [1m[35m (38.6ms)[0m  [1m[36mcommit transaction[0m
+D, [2018-09-23T12:32:46.619863 #5908] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2018-09-23T12:32:46.624475 #5908] DEBUG -- :   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+D, [2018-09-23T12:32:46.625861 #5908] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "production"], ["created_at", "2018-09-23 03:32:46.624771"], ["updated_at", "2018-09-23 03:32:46.624771"]]
+D, [2018-09-23T12:32:46.682005 #5908] DEBUG -- :   [1m[35m (55.4ms)[0m  [1m[36mcommit transaction[0m
