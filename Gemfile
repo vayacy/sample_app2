@@ -36,6 +36,11 @@ gem "rails-controller-testing"
 
 gem "gravtastic"
 
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
