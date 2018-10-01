@@ -27,7 +27,6 @@ production:
   pool: 5
   # database: db/production.sqlite3
   encoding: utf8
-  adapter: postgresql
   port: 5432
   username: gobmqwllhaeqmw
   host: ec2-54-83-50-145.compute-1.amazonaws.com:5432
