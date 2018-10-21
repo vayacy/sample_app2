@@ -39,6 +39,10 @@ gem "rails-controller-testing"
 
 gem "gravtastic"
 
+gem 'jquery-rails'
+
+gem 'jquery-turbolinks'
+
 
 
 # Use Capistrano for deployment
